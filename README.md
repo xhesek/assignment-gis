@@ -20,8 +20,8 @@ Build a map-based application, which lets the user see geo-based data on a map a
 
 Fill in (either in English, or in Slovak):
 
-**Application description**: `<fill in>`
+**Application description**: Vytvorte webovu aplikaciu, ktora bude na mape zobrazovat lyziarske strediska na Slovensku. Pouzivatel si vie vyhladat najblizsie lyziarkse stredisko od zvoleneho bodu (napr. od domu), kde sa nachadzaju zjazdovky podla zvolenej obtiaznosti (cierna, cervena...). Dalej si pouzivatel bude vediet pozriet kde a v akom obdobi hrozi najvacsie lavinove nebezpecenstvo aby sa v tomto case vyhol tymto lyziarskym strediskam. Aplikacia bude schopna zobrazit body zaujmu od zvoleneho lyziarskeho strediska ako napr. restauracie, kaviarne, verejne toalety... ale takisto kulturne pamiatky ako tipy na vylet v tejto oblasti. 
 
-**Data source**: `<fill in>`
+**Data source**: [Open Street Maps](https://www.openstreetmap.org/), [Open Snow Map](http://www.opensnowmap.org/)
 
-**Technologies used**: `<fill in>`
+**Technologies used**: PostgreSQL, PostGIS, Java, JavaScript, MapBox
