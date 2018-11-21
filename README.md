@@ -20,8 +20,8 @@ Build a map-based application, which lets the user see geo-based data on a map a
 
 Fill in (either in English, or in Slovak):
 
-**Application description**: Vytvorte webovu aplikaciu, ktora bude na mape zobrazovat lyziarske strediska na Slovensku. Pouzivatel si vie vyhladat najblizsie lyziarkse stredisko od zvoleneho bodu (napr. od domu), kde sa nachadzaju zjazdovky podla zvolenej obtiaznosti (cierna, cervena...). Dalej si pouzivatel bude vediet pozriet kde a v akom obdobi hrozi najvacsie lavinove nebezpecenstvo aby sa v tomto case vyhol tymto lyziarskym strediskam. Aplikacia bude schopna zobrazit body zaujmu od zvoleneho lyziarskeho strediska ako napr. restauracie, kaviarne, verejne toalety... ale takisto kulturne pamiatky ako tipy na vylet v tejto oblasti. 
+**Application description**: Vytvorte webovu aplikaciu, ktora bude na mape zobrazovat banky na Slovensku. Po spusteni aplikacie su pouzivatelovi zobrazene vsetky banky na Slovensku. Pouzivatel je lokalizovany cez webovy prehliadac a su mu zobrazene najblizsie banky v okruhu 20 km od neho. Dalej si pouzivatel vie zobrazit banky podla ich mena alebo oznacit bod na mape a urcit okruh (v km) v akom sa maju banky zobrazit. Takto si vie zobrazit aj najblizsie bankomaty. Dalsou moznostou je, ze si pouzivatel vie najst najblizsie banky od zvoleneho bodu - vie zadat aj meno banky, okruh v km, pocet najblizsich bank. Aplikacia zobrazuje aj body zaujmu od zvolenej banky, ako napr. restauracie, kaviarne, verejne toalety, ... ak by pouzivatel musel dlho cakat na vybavovacky v banke 
 
-**Data source**: [Open Street Maps](https://www.openstreetmap.org/), [Open Snow Map](http://www.opensnowmap.org/)
+**Data source**: [Open Street Maps](https://www.openstreetmap.org/)
 
 **Technologies used**: PostgreSQL, PostGIS, Java, JavaScript, MapBox
