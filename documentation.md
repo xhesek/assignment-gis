@@ -1,8 +1,5 @@
 # Overview
 
-Vytvorte webovu aplikaciu, ktora bude na mape zobrazovat banky na Slovensku. Po spusteni aplikacie su pouzivatelovi zobrazene vsetky banky na Slovensku. Pouzivatel je lokalizovany cez webovy prehliadac a su mu zobrazene najblizsie banky v okruhu 20 km od neho. Dalej si pouzivatel vie zobrazit banky podla ich mena alebo oznacit bod na mape a urcit okruh (v km) v akom sa maju banky zobrazit. Takto si vie zobrazit aj najblizsie bankomaty. Dalsou moznostou je, ze si pouzivatel vie najst najblizsie banky od zvoleneho bodu - vie zadat aj meno banky, okruh v km, pocet najblizsich bank. Pouzivatel vie nakreslit na mapu polygon - tvoreny zo 4 oznacenych bodov a zobrazia sa banky z tejto oblasti. Aplikacia zobrazuje aj body zaujmu od zvolenej banky, ako napr. restauracie, kaviarne, verejne toalety, ... ak by pouzivatel musel dlho cakat na vybavovacky v banke
-
-
 Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení aplikácie sú používateľovi automaticky zobrazené všetky banky na Slovensku. Hlavnú funkcionalitu aplikácie tvoria tieto akcie:
 
 - lokalizovanie používateľa cez webový prehliadač a zobrazenie najbližších bánk v okruhu 20km
