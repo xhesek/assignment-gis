@@ -1,22 +1,25 @@
-*This is a documentation for a fictional project, just to show you what I expect. Notice a few key properties:*
-- *no cover page, really*
-- *no copy&pasted assignment text*
-- *no code samples*
-- *concise, to the point, gets me a quick overview of what was done and how*
-- *I don't really care about the document length*
-- *I used links where appropriate*
-
 # Overview
 
-This application shows hotels in Bratislava on a map. Most important features are:
-- search by proximity to my current location
-- search by hotel name
-- intelligent ordering - by proximity and by hotel features
-- hotels on the map are color coded by their quality assigned in stars (standard)
+Vytvorte webovu aplikaciu, ktora bude na mape zobrazovat banky na Slovensku. Po spusteni aplikacie su pouzivatelovi zobrazene vsetky banky na Slovensku. Pouzivatel je lokalizovany cez webovy prehliadac a su mu zobrazene najblizsie banky v okruhu 20 km od neho. Dalej si pouzivatel vie zobrazit banky podla ich mena alebo oznacit bod na mape a urcit okruh (v km) v akom sa maju banky zobrazit. Takto si vie zobrazit aj najblizsie bankomaty. Dalsou moznostou je, ze si pouzivatel vie najst najblizsie banky od zvoleneho bodu - vie zadat aj meno banky, okruh v km, pocet najblizsich bank. Pouzivatel vie nakreslit na mapu polygon - tvoreny zo 4 oznacenych bodov a zobrazia sa banky z tejto oblasti. Aplikacia zobrazuje aj body zaujmu od zvolenej banky, ako napr. restauracie, kaviarne, verejne toalety, ... ak by pouzivatel musel dlho cakat na vybavovacky v banke
 
-This is it in action:
+
+Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení aplikácie sú používateľovi automaticky zobrazené všetky banky na Slovensku. Hlavnú funkcionalitu aplikácie tvoria tieto akcie:
+
+- lokalizovanie používateľa cez webový prehliadač a zobrazenie najbližších bánk v okruhu 20km
+- filtrovanie bánk podľa názvu banky
+- filtrovanie bánk podľa určeného bodu na mape a zvoleného okruhu v km
+- nájdenie bankomatov a bodov záujmu (reštaurácie, bary, verejné toalety, kaviarne) podľa určeného bodu na mape a zvoleného okruhu v km
+- nájdenie najbližších bánk (počet si zvolí používateľ) od zvoleného bodu na mape, zvoleného okruhu v km a zvolených názvov bánk
+- nájdenie všetkých bánk, ktoré patria do oblasti, ktorú si používateľ vykreslí do mapy
+
+- bol použitý vlastný štýl background mapy vytvorený pomocou platformy Mapbox
+- body záujmu sú od seba aj bánk farebne odlíšené 
+
+Screenshot aplikácie po jej spustení:
 
 ![Screenshot](screenshot.png)
+
+Aplikácia sa skladá z dvoch základných častí - Backendu a Frontendu. Backend je tvorený webovou aplikáciou napísanou v Java EE.
 
 The application has 2 separate parts, the client which is a [frontend web application](#frontend) using mapbox API and mapbox.js and the [backend application](#backend) written in [Rails](http://rubyonrails.org/), backed by PostGIS. The frontend application communicates with backend using a [REST API](#api).
 
