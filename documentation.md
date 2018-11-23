@@ -14,7 +14,7 @@ Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení apli
 
 Screenshot aplikácie po jej spustení:
 
-![Screenshot](screenshot.png)
+![Screenshot](zakladny.png)
 
 Aplikácia sa skladá z dvoch základných častí - Backendu a Frontendu. Backend je tvorený webovou aplikáciou napísanou v Java EE.
 
