@@ -16,7 +16,7 @@ Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení apli
 
 Screenshot aplikácie po jej spustení:
 
-![Screenshot](zakladny.png)
+![Screenshot](zakladny2.png)
 
 # Frontend
 
