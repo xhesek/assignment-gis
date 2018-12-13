@@ -1,24 +1,22 @@
 # Overview
 
-Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení aplikácie sú používateľovi automaticky zobrazené všetky banky na Slovensku. Hlavnú funkcionalitu aplikácie tvoria tieto akcie:
+Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení aplikácie sú používateľovi automaticky zobrazené všetky banky na Slovensku spolu s heat mapou, ktorá znázorňuje úroveň kriminality na Slovensku. Hlavnú funkcionalitu aplikácie tvoria tieto akcie:
 
 - lokalizovanie používateľa cez webový prehliadač a zobrazenie najbližších bánk v okruhu 20km
 - filtrovanie bánk podľa názvu banky
 - filtrovanie bánk podľa určeného bodu na mape a zvoleného okruhu v km
 - nájdenie bankomatov a bodov záujmu (reštaurácie, bary, verejné toalety, kaviarne) podľa určeného bodu na mape a zvoleného okruhu v km
 - nájdenie najbližších bánk (počet si zvolí používateľ) od zvoleného bodu na mape, zvoleného okruhu v km a zvolených názvov bánk
-- nájdenie všetkých bánk, ktoré patria do oblasti, ktorú si používateľ vykreslí do mapy
+- vyhľadanie bánk v okresy, na ktorý si používateľ vie kliknúť na mape
 
 - bol použitý vlastný štýl background mapy vytvorený pomocou platformy Mapbox
-- body záujmu sú od seba aj bánk farebne odlíšené 
+- body záujmu sú od seba aj bánk farebne odlíšené
+- heat mapa kriminality
+- označené hranice okresov a ich zvýrazňovanie po prejdení myšou nad ním
 
 Screenshot aplikácie po jej spustení:
 
 ![Screenshot](zakladny.png)
-
-Aplikácia sa skladá z dvoch základných častí - Backendu a Frontendu. Backend je tvorený webovou aplikáciou napísanou v Java EE.
-
-The application has 2 separate parts, the client which is a [frontend web application](#frontend) using mapbox API and mapbox.js and the [backend application](#backend) written in [Rails](http://rubyonrails.org/), backed by PostGIS. The frontend application communicates with backend using a [REST API](#api).
 
 # Frontend
 
