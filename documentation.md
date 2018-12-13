@@ -14,8 +14,9 @@ Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení apli
 - heat mapa kriminality
 - označené hranice okresov a ich zvýrazňovanie po prejdení myšou nad ním
 
-Screenshot aplikácie po jej spustení:
+## Screenshots
 
+* Po spustení aplikácie:
 ![Screenshot](zakladny2.png)
 
 ## Frontend
