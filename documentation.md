@@ -73,26 +73,26 @@ Backend aplikácie je vytvorený v programovacom jazyku java. Skladá sa z troch
 
 ### Response
 
-{  
-   "geometry":{  
-      "coordinates":[  
-         17.0195292,  
-         48.4362554998319  
-      ],  
-      "type":"Point"  
-   },  
-   "type":"Feature",  
-   "properties":{  
-      "marker-symbol":"bank",  
-      "city":"city",  
-      "street":"Radlinského",  
-      "streetnumber":"streetnumber",  
-      "postcode":"postcode",  
-      "marker-color":"#000000",  
-      "title":"SLOVENSKA SPORITELNA",  
-      "marker-size":"small"  
-   }  
-}  
+```{  
+	"geometry":{  
+		"coordinates":[  
+			17.0195292,
+			48.4362554998319  
+		],  
+		"type":"Point"  
+	},  
+	"type":"Feature",  
+	"properties":{  
+		"marker-symbol":"bank",  
+		"city":"city",  
+		"street":"Radlinského",  
+		"streetnumber":"streetnumber",  
+		"postcode":"postcode",  
+		"marker-color":"#000000",  
+		"title":"SLOVENSKA SPORITELNA",  
+		"marker-size":"small"  
+	}  
+}```
 
 ## Data
 
