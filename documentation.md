@@ -1,4 +1,4 @@
-# Overview
+## Overview
 
 Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení aplikácie sú používateľovi automaticky zobrazené všetky banky na Slovensku spolu s heat mapou, ktorá znázorňuje úroveň kriminality na Slovensku. Hlavnú funkcionalitu aplikácie tvoria tieto akcie:
 
@@ -18,7 +18,7 @@ Screenshot aplikácie po jej spustení:
 
 ![Screenshot](zakladny2.png)
 
-# Frontend
+## Frontend
 
 The frontend application is a static HTML page (`index.html`), which shows a mapbox.js widget. It is displaying hotels, which are mostly in cities, thus the map style is based on the Emerald style. I modified the style to better highlight main sightseeing points, restaurants and bus stops, since they are all important when selecting a hotel. I also highlighted rails tracks to assist in finding a quiet location.
 
