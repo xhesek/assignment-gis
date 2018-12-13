@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	
+	<title>PDT - Marian Hesek</title>
+	
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+	<script src="https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+	<link href="https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css" rel="stylesheet" />
+	<link href="menu.css" rel="stylesheet">
+	
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	
+	#map {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+	}
+</style>
+</head>
+
+<body>
+
+	<div id='map'></div>
+		<div id='menu' class='menu'>
+
+			<!-- 		vsetky banky -->
+			<a href='#' id='vsetkyBanky'>Všetky banky</a>
+
+			<!-- 		banky vzdialene do 20 km od aktualnej pozicie -->
+			<a href='#' id='bankyVokoli'>Banky v mojom okolí</a>
+			
+			<!-- 		banky v okruhu vykreslenom na mape -->
+			<a href='#' id='vykresleneBanky'>Banky v okruhu vykreslenom na mape</a>
+
+			<!-- 		vycistit mapu -->
+			<a href='#' id='vycistit'>Vyčistiť mapu</a>
+
+			<!-- 		banky podla nazu -->
+			<div id='bankyPodlaNazvu' class='customMenu'>
+				<input type="checkbox" id='cb_csob' /> <label for="cb_csob">ČSOB</label><br />
+				<input type="checkbox" id='cb_slsp' /> <label for="cb_slsp">SLSP</label><br />
+				<input type="checkbox" id='cb_tb' /> <label for="cb_tb">TATRABANKA</label><br />
+				<input type="checkbox" id='cb_vub' /> <label for="cb_vub">VÚB</label><br />
+				<input type="checkbox" id='cb_unicredit' /> <label for="cb_unicredit">UNICREDIT</label><br /> 
+				<input type="checkbox" id='cb_sberbank' /> <label for="cb_sberbank">SBERBANK</label><br />
+				<input type="checkbox" id='cb_fio' /> <label for="cb_fio">FIO</label><br />
+				<input type="checkbox" id='cb_mbank' /> <label for="cb_mbank">MBANK</label><br />
+				<input type="checkbox" id='cb_otp' /> <label for="cb_otp">OTP</label><br />
+				<input type="checkbox" id='cb_postova' /> <label for="cb_postova">POŠTOVÁ BANKA</label><br /> 
+				<input type="checkbox" id='cb_prima' /> <label for="cb_prima">PRIMABANKA</label><br /> 
+				<input type="checkbox" id='cb_raiffeisen' /> <label for="cb_raiffeisen">RAIFFEISEN BANK</label> 
+				<a href='#' id='btnBankyPodlaNazvu'>Banky podľa názvu</a>
+			</div>
+
+			<!-- 		banky v okruhu zadanej vzdialenosti od zadaneho bodu -->
+			<div id='inputMenu' class='inputMenu'>
+				<input type="text" name='zs' placeholder="Zem. šírka" value="48.14226521928136"> 
+				<input type="text" name='zd' placeholder="Zem. dĺžka" value="17.149658203125004"> 
+				<input type="text" name='vzdialenost' placeholder="Vzdialenosť" value="50">
+				<a href='#' id='okruhVzd'>Banky v okruhu zadanej vzdialenosti abodu</a> 
+				<a href='#' id='okruhVzdPoi'>POI v okruhu zadanej vzdialenosti a bodu</a> 
+				<input type="text" name='pocetBank' placeholder="Maximálny počet bánk" value="5"> 
+				<a href='#' id='bankyVoVzd'>Banky v okruhu zadanej vzdialenosti a bodu,názvu a maximálnemu počtu</a>	
+			</div>
+		</div>
+
+</body>
+	<script src="script.js" defer></script>
+
+</html>
