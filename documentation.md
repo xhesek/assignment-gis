@@ -36,7 +36,7 @@ Prevažnú časť našej stránky tvorí mapa, ktorá je po spustení zväčšen
 
 ## Backend
 
-Backend aplikácie je vytvorený v programovacom jazyku java. Skladá sa z troch tried. Trieda Dbs.java sa stará o pripojenie k lokálnej databáze, o vykonávanie jednotlivých queries na základe API volania z frontendu a následnému vytvoreniu geojsona odoslanému späť na frontend. V triede RESTController.java sa odchytávajú jednotlivé API volania, parsujú parametre ktoré prídu z frontendu a odosielajú triede Dbs.java na spracovanie. Trieda Application.java slúži len ako štartovacia trieda webovej aplikácie.
+Backend aplikácie je vytvorený v programovacom jazyku java. Skladá sa z troch tried. Trieda `Dbs.java` sa stará o pripojenie k lokálnej databáze, o vykonávanie jednotlivých queries na základe API volania z frontendu a následnému vytvoreniu geojsona odoslanému späť na frontend. V triede `RESTController.java` sa odchytávajú jednotlivé API volania, parsujú parametre ktoré prídu z frontendu a odosielajú triede `Dbs.java` na spracovanie. Trieda `Application.java` slúži len ako štartovacia trieda webovej aplikácie.
 
 
 ## Api
@@ -103,6 +103,19 @@ Backend aplikácie je vytvorený v programovacom jazyku java. Skladá sa z troch
 
 ## Data
 
-* https://www.openstreetmap.org - informácie o bankách a bodoch záujmu získavame priamo z OSM dát (názvy, adresy, geopozíciu...). Takisto aj dáta o hraniciach okresoch získavame z OSM. Dáta sme naimportovali do našej databáza pomocou nástroja `osm2pgsql`.
+* https://www.openstreetmap.org - informácie o bankách a bodoch záujmu získavame priamo z OSM dát (názvy, adresy, geopozíciu...). Takisto aj dáta o hraniciach okresoch získavame z OSM. Dáta sme naimportovali do našej databáza pomocou nástroja `osm2pgsql`. V databáze sme použili defaultnú schému stĺpcov OSM.
 
-* https://portal.minv.sk - informácie o kriminalite sme získali zo štatistík Ministerstva vnútra SR. Štatistiky boli rozdelené poďla okresov a použili sme informácie o zistených trestných činoch v jednotlivých okresoch. 
+* https://portal.minv.sk - informácie o kriminalite sme získali zo štatistík Ministerstva vnútra SR. Štatistiky boli rozdelené poďla okresov a použili sme informácie o zistených trestných činoch v jednotlivých okresoch. V databáze sme vytvorili nasledujúcu tabuľku:
+
+```SQL
+CREATE TABLE public.kriminalita_okresy
+(
+    id integer NOT NULL,
+    name character varying(150) COLLATE pg_catalog."default",
+    tc_zistene integer,
+    tc_objasnene integer,
+    tc_percent real,
+    okres character varying(150) COLLATE pg_catalog."default",
+    CONSTRAINT kriminalita_okresy_pkey PRIMARY KEY (id)
+)
+```
