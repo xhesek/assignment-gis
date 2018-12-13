@@ -73,7 +73,8 @@ Backend aplikácie je vytvorený v programovacom jazyku java. Skladá sa z troch
 
 ### Response
 
-```{  
+```JSON
+{  
 	"geometry":{  
 		"coordinates":[  
 			17.0195292,
@@ -92,7 +93,8 @@ Backend aplikácie je vytvorený v programovacom jazyku java. Skladá sa z troch
 		"title":"SLOVENSKA SPORITELNA",  
 		"marker-size":"small"  
 	}  
-}```
+}
+```
 
 ## Data
 
