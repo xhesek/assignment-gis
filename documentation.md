@@ -29,6 +29,8 @@ Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení apli
 
 The frontend application is a static HTML page (`index.html`), which shows a mapbox.js widget. It is displaying hotels, which are mostly in cities, thus the map style is based on the Emerald style. I modified the style to better highlight main sightseeing points, restaurants and bus stops, since they are all important when selecting a hotel. I also highlighted rails tracks to assist in finding a quiet location.
 
+Frontend aplikácie tvorí statické html, ktoré je súcasťou backendovej webovej aplikácie v podobe welcome page. Celý frontend sa skladá z troch časťí: map.html, ktorý tvorí view, kde sú zobrazené všetky komponenty stránky. Ďalej script.js, kde je celá biznis logika frontendu. Sú tu funkcie, ktoré sa starajú o komunikáciu so serverom prostredníctvom API volaní a funkcie ktoré vykreslujú prvky do mapy. Posledný súbor je menu.css, kde je zadefinovaný vzhľad zobrazovanej stránky.
+
 All relevant frontend code is in `application.js` which is referenced from `index.html`. The frontend code is very simple, its only responsibilities are:
 - detecting user's location, using the standard [web location API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation)
 - displaying the sidebar panel with hotel list and filtering controls, driving the user interaction and calling the appropriate backend APIs
