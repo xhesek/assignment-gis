@@ -86,8 +86,8 @@ Backend aplikácie je vytvorený v programovacom jazyku java. Skladá sa z troch
 		"marker-symbol":"bank",  
 		"city":"city",  
 		"street":"Radlinského",  
-		"streetnumber":"streetnumber",  
-		"postcode":"postcode",  
+		"streetnumber":"65",  
+		"postcode":"85101",  
 		"marker-color":"#000000",  
 		"title":"SLOVENSKA SPORITELNA",  
 		"marker-size":"small"  
