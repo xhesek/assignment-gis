@@ -119,3 +119,56 @@ CREATE TABLE public.kriminalita_okresy
     CONSTRAINT kriminalita_okresy_pkey PRIMARY KEY (id)
 )
 ```
+
+
+## Optimalization
+
+* Vytvorenie tabuľky bánk z tabuľky planet_osm_point s hotovými geojsonami, názvami a pozíciami + vytvorenie indexu nad názvami bánk
+
+```SQL
+CREATE TABLE banky_point AS (SELECT ST_AsGeoJSON(ST_Transform(way, 4326)) AS result, name, tags, way FROM planet_osm_point 
+	WHERE amenity LIKE 'bank' 
+	AND name IS NOT NULL
+ORDER BY name)	
+
+CREATE INDEX name_point_idx ON banky_point (name);
+```
+
+* Vytvorenie tabuľky bánk z tabuľky planet_osm_polygon s hotovými geojsonami, názvami a pozíciami + vytvorenie indexu nad názvami bánk
+
+```SQL
+CREATE TABLE banky_polygon AS (SELECT ST_AsGeoJSON(ST_Transform(way, 4326)) AS result, name, tags, way FROM planet_osm_point 
+	WHERE amenity LIKE 'bank' 
+	AND name IS NOT NULL
+ORDER BY name)	
+
+CREATE INDEX name_poly_idx ON banky_polygon (name);
+```
+
+* Vytvorenie tabuľky bodov záujmu z tabuľky planet_osm_point s hotovými geojsonami, názvami a pozíciami + vytvorenie indexu nad amenity bodov záujmu
+
+```SQL
+CREATE TABLE point_of_interest AS (SELECT ST_AsGeoJSON(ST_Transform(way, 4326)) AS result, operator, amenity, way FROM planet_osm_point 
+	WHERE (amenity LIKE 'atm' OR amenity LIKE 'bar' OR amenity LIKE 'cafe' OR amenity LIKE 'restaurant' OR amenity LIKE 'toilets')
+ORDER BY amenity)
+	
+CREATE INDEX amenity_poi_idx ON point_of_interest (amenity);
+```
+
+* Vytvorenie tabuľky okresov z tabuľky planet_osm_polygon s hotovými geojsonami, názvami a pozíciami
+
+```SQL
+CREATE TABLE svk_okresy AS (SELECT ST_AsGeoJSON(ST_Transform(way, 4326)) AS result, planet_osm_polygon.name, planet_osm_polygon.way FROM planet_osm_polygon 
+	WHERE planet_osm_polygon.boundary LIKE 'administrative' 
+	AND planet_osm_polygon.admin_level LIKE '8'
+	AND planet_osm_polygon.name LIKE 'okres%'
+ORDER BY name)
+```
+
+* Konsolidácia dát pre všetky banky - aby sa nepoužívali v query funkcie v podmienke WHERE UPPER(unaccent(name))
+
+```SQL
+UPDATE banky_point
+SET name = UPPER(unaccent(name))
+where UPPER(unaccent(name)) like UPPER(unaccent('ČSOB%'))
+```
