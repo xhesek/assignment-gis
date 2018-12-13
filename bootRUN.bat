@@ -1,1 +1,0 @@
-gradlew bootRun --debug-jvm
