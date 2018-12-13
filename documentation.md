@@ -172,3 +172,15 @@ UPDATE banky_point
 SET name = UPPER(unaccent(name))
 where UPPER(unaccent(name)) like UPPER(unaccent('ČSOB%'))
 ```
+
+## Optimalization compare queries before and after
+
+"HashAggregate  (cost=110893.27..110895.80 rows=253 width=96)"
+"  Group Key: (st_asgeojson(st_transform(planet_osm_polygon.way, 4326), 15, 0)), planet_osm_polygon.name, planet_osm_polygon.tags"
+"  ->  Gather  (cost=1000.00..110891.38 rows=253 width=96)"
+"        Workers Planned: 2"
+"        ->  Parallel Append  (cost=0.00..109866.08 rows=253 width=96)"
+"              ->  Parallel Seq Scan on planet_osm_polygon  (cost=0.00..97276.66 rows=1 width=92)"
+"                    Filter: ((name IS NOT NULL) AND (amenity ~~ 'bank'::text))"
+"              ->  Parallel Seq Scan on planet_osm_point  (cost=0.00..12585.62 rows=105 width=109)"
+"                    Filter: ((name IS NOT NULL) AND (amenity ~~ 'bank'::text))"
