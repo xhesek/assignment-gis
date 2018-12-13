@@ -19,6 +19,12 @@ Aplikácia je schopná zobrazovať na mape banky na Slovensku. Po spustení apli
 * Po spustení aplikácie:
 ![Screenshot](zakladny2.png)
 
+* Banky vo vybranom okrese:
+![Screenshot](v_okrese.png)
+
+* Body záujmu vo vybranej oblasti:
+![Screenshot](poi.png)
+
 ## Frontend
 
 The frontend application is a static HTML page (`index.html`), which shows a mapbox.js widget. It is displaying hotels, which are mostly in cities, thus the map style is based on the Emerald style. I modified the style to better highlight main sightseeing points, restaurants and bus stops, since they are all important when selecting a hotel. I also highlighted rails tracks to assist in finding a quiet location.
